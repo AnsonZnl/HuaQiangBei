@@ -1,0 +1,52 @@
+{dede:include filename='head.htm'/}
+<div class="main-centers center clear mt1">
+        <div class="viewbox">
+            <div class="content clearfix">
+                <div class="shop_img fl">
+                    {dede:field.body/}
+                </div>
+                <div class="itemInfo-wrap fl">
+                    <div class="title">
+                        <h2>{dede:field name='title'/}</h2>
+                    </div>
+                    <div class="prices">
+                        <small>商 品 原 价：</small>
+                        <del>￥{dede:field.price/}.00元</del>
+                        <br>
+                        <small>优 惠 价 格：</small>
+                        <span class="red">￥{dede:field.trueprice/}.00元</span>
+                        <br>
+                    </div>
+                    <div class="brand">
+                        <small>品  牌：</small>
+                        <span>{dede:field.brand/}</span>
+                    </div>
+                    <!--<small>商品版本：</small>-->
+                    <!--<span>{dede:field.shop_banben/}</span>-->
+                    <!--<br>-->
+                    <p>
+                        <small>上架日期：</small>
+                        <span>{dede:field.pubdate function="MyDate('y年m年d日',@me)"/}</span>
+                    </p>
+                    <br>
+                    <form id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/posttocar.php">
+                        <input type="hidden" name="id" value="{dede:field.id/}"/>
+                        <input type="hidden" name="title" value="{dede:field.title/}"/>
+                        <input type="hidden" name="price" value="{dede:field.trueprice/}"/>
+                        <input type="hidden" name="units" value="{dede:field.units/}"/>
+                        <button type="submit" name="button" class="btn-2">放入购物车</button>
+                    </form>
+                </div>
+            </div>
+            <div class="shop_text">
+                <h2 class="title">商品详情</h2>
+                　　{dede:field.shop_text2/}
+            </div>
+        </div>
+
+    <div class="place">
+        当前位置: {dede:field name='position'/}
+    </div>
+</div>
+
+{dede:include filename='footer.htm'/}

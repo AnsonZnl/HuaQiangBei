@@ -1,0 +1,23 @@
+{dede:include filename='head.htm'/}
+<div class="list_banner">{dede:field.content/}</div>
+<div class="list_shop main-centers">
+    <ul class="clearfix">
+        {dede:list pagesize="8" titlelen="35" addfields='trueprice,price'}
+        <li>
+            <a href="[field:arcurl/]" class="picBox "><img src="[field:litpic function='firstimg(@me)'/]" alt=""></a>
+            <h3><a class="" href="[field:arcurl/]" >[field:title/]</a></h3>
+            <div class="link_txt">
+                <span class="price">￥[field:price/]</span>
+                <del class="trueprice">市场价￥[field:trueprice/]</del>
+            </div>
+                <a href="[field:arcurl/]" class="list_btn-2">查看详情</a>
+        </li>
+        {/dede:list}
+    </ul>
+</div>
+<div class="pages main-centers">
+    {dede:pagelist istitem="index,pre,next,end,option,info," listsize="5"/}
+</div>
+<p class="main-centers place">当前位置： {dede:field name='position'/}</p>
+
+{dede:include filename='footer.htm'/}
